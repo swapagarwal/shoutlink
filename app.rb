@@ -29,7 +29,10 @@ end
 
 get '/api/create' do
   url = params[:url]
-  key = Haikunator.haikunate(0)
+  begin
+    key = Haikunator.haikunate(0)
+    link = Link.get(key)
+  end until link.nil?
   link = Link.new id: key, original: url
   if link.save
     status 201
