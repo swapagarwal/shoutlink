@@ -12,28 +12,26 @@ end
 
 DataMapper.finalize.auto_upgrade!
 
+helpers do
+  def search
+    link = Link.get(params[:id])
+    password = params[:password]
+    if link.nil?
+      halt 404
+    end
+    if !link.password.nil? and link.password != password
+      halt 401
+    end
+    link.original
+  end
+end
+
 get '/api/view/:id' do
-  link = Link.get(params[:id])
-  password = params[:password]
-  if link.nil?
-    halt 404
-  end
-  if !link.password.nil? and link.password != password
-    halt 401
-  end
-  link.original
+  search
 end
 
 get '/api/open/:id' do
-  link = Link.get(params[:id])
-  password = params[:password]
-  if link.nil?
-    halt 404
-  end
-  if !link.password.nil? and link.password != password
-    halt 401
-  end
-  redirect link.original, 301
+  redirect search, 301
 end
 
 get '/api/create' do
