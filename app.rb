@@ -26,15 +26,15 @@ helpers do
   end
 end
 
-get '/api/view/:id' do
+route :get, :post, '/api/view/:id' do
   search
 end
 
-get '/api/open/:id' do
+route :get, :post, '/api/open/:id' do
   redirect search, 301
 end
 
-get '/api/create' do
+route :get, :post, '/api/create' do
   url = params[:url]
   password = params[:password]
   begin
