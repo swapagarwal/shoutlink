@@ -37,10 +37,18 @@ end
 route :get, :post, '/api/create' do
   url = params[:url]
   password = params[:password]
-  begin
-    key = Haikunator.haikunate(0)
-    link = Link.get(key)
-  end until link.nil?
+  custom_key = params[:alias]
+
+  if custom_key
+    key = custom_key
+    halt 500, 'Duplicate Key' if Link.get(key)
+  else
+    begin
+      key = Haikunator.haikunate(0)
+      link = Link.get(key)
+    end until link.nil?
+  end
+
   link = Link.new id: key, original: url, password: password
   if link.save
     status 201
