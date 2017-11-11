@@ -65,6 +65,9 @@ GEM
       rack
     rack-test (0.6.3)
       rack (>= 1.0)
+    rack-throttle (0.5.0)
+      bundler (>= 1.0.0)
+      rack (>= 1.0.0)
     sinatra (1.4.6)
       rack (~> 1.4)
       rack-protection (~> 1.4)
@@ -88,8 +91,9 @@ DEPENDENCIES
   dm-postgres-adapter
   haikunator
   pg
+  rack-throttle
   sinatra
   sinatra-contrib
 
 BUNDLED WITH
-   1.10.6
+   1.15.4
