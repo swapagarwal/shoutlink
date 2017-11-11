@@ -34,13 +34,10 @@ An API to create Heroku-like memorable random names for URLs
 
 ### Example
 
-[http://shoutlink.herokuapp.com/api/create?url=http://google.com](http://shoutlink.herokuapp.com/api/create?url=http://google.com)
-
-[http://shoutlink.herokuapp.com/api/open/blue-bird](http://shoutlink.herokuapp.com/api/open/blue-bird)
-
-[http://shoutlink.herokuapp.com/api/create?url=http://github.com&password=test](http://shoutlink.herokuapp.com/api/create?url=http://github.com&password=test)
-
-[http://shoutlink.herokuapp.com/api/view/dawn-cloud?password=test](http://shoutlink.herokuapp.com/api/view/dawn-cloud?password=test)
+[http://shoutlink.herokuapp.com/api/create?url=http://google.com](http://shoutlink.herokuapp.com/api/create?url=http://google.com)  
+[http://shoutlink.herokuapp.com/api/open/blue-bird](http://shoutlink.herokuapp.com/api/open/blue-bird)  
+[http://shoutlink.herokuapp.com/api/create?url=http://github.com&password=test](http://shoutlink.herokuapp.com/api/create?url=http://github.com&password=test)  
+[http://shoutlink.herokuapp.com/api/view/dawn-cloud?password=test](http://shoutlink.herokuapp.com/api/view/dawn-cloud?password=test)  
 
 ### Local Usage
 
