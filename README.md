@@ -32,18 +32,22 @@ An API to create Heroku-like memorable random names for URLs
 
 *Response*: redirect to the original URL that was shortened
 
-### Example
-
-```
-http://shoutlink.herokuapp.com/api/create?url=http://google.com
-http://shoutlink.herokuapp.com/api/open/blue-bird
-http://shoutlink.herokuapp.com/api/create?url=http://github.com&password=test
-http://shoutlink.herokuapp.com/api/view/dawn-cloud?password=test
-```
-
 ### Local Usage
+
+Install PostgreSQL, and create a database using `CREATE DATABASE mydb;`
+
+To start the server, run:
 
 ```
 bundle install
 bundle exec rackup
+```
+
+### Example
+
+```
+http://localhost:9292/api/create?url=http://google.com
+http://localhost:9292/api/open/blue-bird
+http://localhost:9292/api/create?url=http://github.com&password=test
+http://localhost:9292/api/view/dawn-cloud?password=test
 ```
