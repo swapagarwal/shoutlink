@@ -1,0 +1,28 @@
+os: linux
+dist: trusty
+sudo: true
+language: ruby
+rvm:
+    - 2.6.2
+env:
+    - DATABASE_URL=postgres://postgres:postgres@127.0.0.1/mydb
+services:
+    - postgresql
+addons:
+  postgresql: "9.5"
+  apt:
+    packages:
+        - postgresql-client-9.5
+        - postgresql-9.5
+        - libpq-dev
+        - postgresql-server-dev-9.5
+        - postgresql-contrib-9.5
+before_install:
+    - rm Gemfile.lock -r -f
+install:
+    - gem install bundler:2.0.1
+    - bundle install
+before_script:
+    - sudo psql -c 'CREATE DATABASE mydb;' -U postgres
+script:
+    - bundle exec rspec
