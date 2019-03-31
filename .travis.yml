@@ -1,0 +1,15 @@
+os: linux
+language: ruby
+gemfile: Gemfile
+rvm:
+    - 2.6
+services:
+    - postgresql
+env:
+    global:
+      - DATABASE_URL=postgres://postgres:postgres@127.0.0.1/mydb
+before_script:
+    - gen install bundle
+    - psql -c 'CREATE DATABASE mydb;' -U postgres
+script:
+    - bundle exec rspec

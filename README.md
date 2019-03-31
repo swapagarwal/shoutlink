@@ -50,4 +50,10 @@ bundle install
 bundle exec rackup
 ```
 
+or run tests:
+
+```
+bundle exec rspec
+```
+
 Replace the hostname in the examples with `localhost:9292` for local development.
